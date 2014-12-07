@@ -1,0 +1,31 @@
+BGP Looking Glass NG
+
+This is a BGP Looking Glass system for multiple routers.
+BGP Routers supported: Quagga & MikroTik.
+
+The system provides open user registration and allows users to register their Quagga or MikroTik routers on the system.
+
+With the registered routers, an anonymous user may lookup the BGP table, run traceroutes from MikroTik routers and do Whois Lookups on the WiND whois server.
+
+This project was written for AWMN (Athens Wireless Metropolitan Network) but can be used on any wireless community running BGP and using the WiND database (https://github.com/wind-project/wind) 
+
+This system can be used to troubleshoot and monitor small to medium sized BGP networks.
+It hasn't been tested on routers with the full internet BGP table.
+
+
+Requirements:
+
+WiND https://github.com/wind-project/wind (only for the Whois lookup feature)
+Tested on Ubuntu. It should work just fine on any other distro as well.
+PHP 5.2+
+MySQL 5.1+
+phpseclib ://phpseclib.sourceforge.net/
+Crond (for periodic router checks)                                      
+
+
+See CREDITS for other software used in this system.
+
+See INSTALL for installation instructions.
+
+Check out http://routers.cha0s.gr to see it in action monitoring the AWMN network (www.awmn.net)
+Registration on the installation above is disabled for users accessing it from the internet.

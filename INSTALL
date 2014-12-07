@@ -1,0 +1,47 @@
+Download BGO Looking Glass NG zip from GitHub and extract it to a web accessible folder.
+
+Create a MySQL database and import the db_schema.sql to create the system's tables.
+
+Copy includes/config.php.dist to includes/config.php and edit it appropriately.
+
+Make sure you install phpseclib http://phpseclib.sourceforge.net/ on your PHP's include path.
+It's needed for SSH2 access to MikroTik routers.
+
+Also make sure you have installed PHP PEAR Net_Whois (http://pear.php.net/package/Net_Whois/)
+It's needed for the Whois lookup section.
+
+Visit the folder you extracted the system.
+It should load the dashboard page.
+
+Click on the Login link on the top right corner to login to the system.
+
+Login to the system with:
+User: admin
+Pass: admin
+
+You should change your password right after logging in (go to "Staff" and edit the 'admin' account)
+
+Then you may go to "System Settings" on the main menu to customize the system according to your needs.
+
+
+You should also configure your crond to run the check_routers.php script.
+This is used to check periodically all the registered routers to see if they are up or if the password is correct.
+
+Add the following to your cron
+0 * * * * /usr/bin/php /path/to/bgp-looking-glass-ng/includes/check_routers.php > /dev/null 2>&1
+
+If you have many routers or they are too slow to respond in time you may increase the cron run time to 5 minute intervals or more.
+
+
+For the system to access Quagga Routers users will need to provide the read only password of their Quagga routers.
+For Mikrotik routers a read only SSH user should be created for the system to be able to access those.
+
+An example would be:
+
+/user group add name=bgplg policy=ssh,read,test comment="www.routers.awmn looking glass"
+/user add name=bgplg password=bgplg group=bgplg comment="www.routers.awmn looking glass"
+/system logging set 0 topics=info,!account,!ssh
+
+This creates a new group "bgplg" with ssh read only permissions and a user "bgplg" that belongs to that group with password "bgplg"
+The 3rd command disables the ssh logging so the log window won't get flooded by the periodic logins of the system. 
+

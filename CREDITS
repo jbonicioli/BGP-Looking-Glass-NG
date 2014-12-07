@@ -1,0 +1,20 @@
+Main Author: Vaggelis Koutroumpas (vaggelis _at_ koutroumpas.gr)
+Based on Mulri-router Looking Glass for PHP http://freecode.com/projects/mrlg4php
+
+Also used code and libraries from:
+jQuery Library http://jquery.com/
+jQuery-UI Library http://jqueryui.com/
+jQuery Tipsy http://onehackoranother.com/projects/jquery/tipsy/
+jQuery Migrate https://github.com/jquery/jquery-migrate/
+jQuery Easing http://gsgd.co.uk/sandbox/jquery/easing/
+jQuery Tablesorter http://tablesorter.com/
+jQuery Thickbox http://codylindley.com/thickbox/
+jQuery Colorbox http://www.jacklmoore.com/colorbox/
+jQuery Mega Menu http://www.javascriptkit.com/script/script2/jkmegamenu.shtml
+
+phpseclib http://phpseclib.sourceforge.net/
+PHP PEAR Net_Whois http://pear.php.net/package/Net_Whois/
+All icons used are in the public domain http://www.iconfinder.com
+MikroTik Icon is a registered trademark of MikroTik http://www.mikrotik.com/
+
+Parts of code for processing the BGP prefix list output were borrowed from Nister's BGPMap @ AWMN.
